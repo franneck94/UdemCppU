@@ -1,12 +1,8 @@
 {
     "configurations": [
         {
-            "cStandard": "c99",
-            "compilerArgs": [
-                "-Wall",
-                "-Wextra",
-                "-Wpedantic"
-            ],
+            "cStandard": "c17",
+            "compilerArgs": [],
             "compilerPath": "C:/cygwin64/bin/gcc.exe",
             "cppStandard": "c++11",
             "includePath": [

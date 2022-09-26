@@ -1,27 +1,26 @@
+#include <cstdint>
 #include <iostream>
 #include <random>
 #include <vector>
 
-constexpr std::size_t NUM_ELEMENTS = 1'000'000;
+constexpr static auto NUM_ELEMENTS = 1'000'000U;
 
 int main()
 {
-    std::vector<int> my_vector(NUM_ELEMENTS, 0);
+    auto my_vector = std::vector<std::int32_t>(NUM_ELEMENTS, 0U);
 
-    std::random_device seed_generator{};
-    std::mt19937_64 random_generator{seed_generator()};
-    std::uniform_int_distribution<int> random_distribution{-10, 10};
+    auto seed = std::random_device{};
+    auto gen = std::mt19937{seed()};
+    auto dist = std::uniform_int_distribution<std::int32_t>{-10, 10};
 
-    for (std::size_t i = 0; i < NUM_ELEMENTS; i++)
+    for (std::size_t i = 0; i < my_vector.size(); ++i)
     {
-        my_vector[i] = random_distribution(random_generator);
+        my_vector[i] = dist(gen);
     }
 
-    // ....
-
-    for (std::size_t i = 0; i < 10; i++)
+    for (std::size_t i = 0; i < 10; ++i)
     {
-        std::cout << my_vector[i] << std::endl;
+        std::cout << my_vector[i] << '\n';
     }
 
     return 0;
