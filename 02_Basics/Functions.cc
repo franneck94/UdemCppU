@@ -1,23 +1,37 @@
+#include <cstdint>
 #include <iostream>
 
-// ReturnType FunctionsName(ParameterList - optional)
-// {
-//    // FunctionCode
-// }
-
-int user_input()
+bool game(std::int32_t lower_bound, std::int32_t upper_bound)
 {
-    int number;
-    std::cout << "Please enter a number: ";
-    std::cin >> number;
+    std::int32_t temp = 0;
+    std::uint32_t user_input = 0;
 
-    return number;
+    while (true)
+    {
+        std::cout << "Please enter a value in the range [" << lower_bound << ", " << upper_bound << "]: ";
+        std::cin >> temp;
+
+        bool check1 = temp < lower_bound;
+        bool check2 = temp > upper_bound;
+        if (check1 || check2)
+        {
+            std::cout << "Incorrect input\n";
+            return false;
+        }
+        else
+        {
+            user_input = temp;
+        }
+
+        std::cout << "You entered: " << user_input << std::endl;
+    }
+
+    return true;
 }
 
 int main()
 {
-    int my_number = user_input();
-    std::cout << my_number << std::endl;
+    game(0, 5);
 
     return 0;
 }

@@ -1,22 +1,34 @@
+#include <cstdint>
 #include <iostream>
 
 int main()
 {
-    for (int i = 2; i < 10; i += 2)
+    std::int32_t temp = 0;
+    std::uint32_t user_input = 0;
+
+    while (true)
     {
-        std::cout << i << std::endl;
+        std::cout << "Please enter a value in the range [0, 10]: ";
+        std::cin >> temp;
+
+        // && := und
+        // || := oder
+        // >, <, >=, <=, ==, !=
+
+        bool check1 = temp < 0;
+        bool check2 = temp > 10;
+        if (check1 || check2)
+        {
+            std::cout << "Incorrect input\n";
+            break;
+        }
+        else
+        {
+            user_input = temp;
+        }
+
+        std::cout << "You entered: " << user_input << std::endl;
     }
-
-    int sum = 10;
-
-    do
-    {
-        std::cout << "\nCurrent sum: " << sum << " Enter the next value: ";
-        int input;
-        std::cin >> input;
-
-        sum += input;
-    } while (sum < 10);
 
     return 0;
 }
