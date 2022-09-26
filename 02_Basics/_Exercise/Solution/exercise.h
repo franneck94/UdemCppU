@@ -18,4 +18,4 @@ struct PlayerData
 };
 
 // Exercise2
-void print_player_pos(const PlayerData &player);
+void print_player_pos(const PlayerData player);
