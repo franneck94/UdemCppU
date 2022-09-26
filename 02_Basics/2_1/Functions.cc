@@ -8,7 +8,8 @@ bool game(std::int32_t lower_bound, std::int32_t upper_bound)
 
     while (true)
     {
-        std::cout << "Please enter a value in the range [" << lower_bound << ", " << upper_bound << "]: ";
+        std::cout << "Please enter a value in the range [" << lower_bound
+                  << ", " << upper_bound << "]: ";
         std::cin >> temp;
 
         bool check1 = temp < lower_bound;
