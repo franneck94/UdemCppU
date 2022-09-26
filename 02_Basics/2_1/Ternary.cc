@@ -16,5 +16,8 @@ int main()
     //                BOOL EXPR  ? TRUE : FALSE;
     int older_age2 = age1 > age2 ? age1 : age2;
 
+    std::cout << older_age1 << std::endl;
+    std::cout << older_age2 << std::endl;
+
     return 0;
 }
