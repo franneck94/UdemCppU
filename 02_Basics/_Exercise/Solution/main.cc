@@ -4,10 +4,21 @@
 
 int main()
 {
-    int I = 5;
-    int J = 3;
+    PlayerData p1 = PlayerData{.id = 0,
+                               .x_pos = 10.0F,
+                               .y_pos = 1.0F,
+                               .health = 100,
+                               .energy = 50,
+                               .alliance = Alliance::ALLIED};
+    PlayerData p2 = PlayerData{.id = 0,
+                               .x_pos = 12.0F,
+                               .y_pos = 6.0F,
+                               .health = 80,
+                               .energy = 50,
+                               .alliance = Alliance::ENEMY};
 
-    mod_cross_sum(I, J);
+    print_player_pos(p1);
+    print_player_pos(p2);
 
     return 0;
 }

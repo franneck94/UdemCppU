@@ -1,11 +1,13 @@
 #include <cstdint>
 #include <iostream>
 
+// enum: Enumeration
+
 enum class Lane
 {
     RIGHT_LANE,
+    LEFT_LANE,
     CENTER_LANE,
-    LEFT_LANE
 };
 
 struct Vehicle
@@ -15,59 +17,26 @@ struct Vehicle
     Lane lane;
 };
 
-void print_vehicle_data(Vehicle &vehicle)
+void print_vehicle_info(Vehicle vehicle)
 {
     std::cout << "Vehicle ID: " << vehicle.id << std::endl;
-    std::cout << "Vehicle Velocity [kph]: " << vehicle.velocity << std::endl;
+    std::cout << "Vehicle Velocity (kph): " << vehicle.velocity << std::endl;
 
     switch (vehicle.lane)
     {
-    case Lane::CENTER_LANE:
-    {
-        std::cout << "Vehicle Lane Association: Center Lane" << std::endl;
-        break;
-    }
     case Lane::RIGHT_LANE:
     {
-        std::cout << "Vehicle Lane Association: Right Lane" << std::endl;
+        std::cout << "RIGHT_LANE\n";
+        break;
+    }
+    case Lane::CENTER_LANE:
+    {
+        std::cout << "CENTER_LANE\n";
         break;
     }
     case Lane::LEFT_LANE:
     {
-        std::cout << "Vehicle Lane Association: Left Lane" << std::endl;
-        break;
-    }
-    default:
-    {
-        break;
-    }
-    }
-}
-
-void print_vehicle_data_pointer(Vehicle *vehicle)
-{
-    std::cout << "Vehicle ID: " << vehicle->id << std::endl;
-    std::cout << "Vehicle Velocity [kph]: " << vehicle->velocity << std::endl;
-
-    switch (vehicle->lane)
-    {
-    case Lane::CENTER_LANE:
-    {
-        std::cout << "Vehicle Lane Association: Center Lane" << std::endl;
-        break;
-    }
-    case Lane::RIGHT_LANE:
-    {
-        std::cout << "Vehicle Lane Association: Right Lane" << std::endl;
-        break;
-    }
-    case Lane::LEFT_LANE:
-    {
-        std::cout << "Vehicle Lane Association: Left Lane" << std::endl;
-        break;
-    }
-    default:
-    {
+        std::cout << "LEFT_LANE\n";
         break;
     }
     }
@@ -75,10 +44,8 @@ void print_vehicle_data_pointer(Vehicle *vehicle)
 
 int main()
 {
-    Vehicle v1 = {1, 100.0f, Lane::CENTER_LANE};
-    print_vehicle_data(v1);
-
-    print_vehicle_data_pointer(&v1);
+    Vehicle v1 = {.id = 1, .velocity = 100.0F, .lane = Lane::LEFT_LANE};
+    print_vehicle_info(v1);
 
     return 0;
 }

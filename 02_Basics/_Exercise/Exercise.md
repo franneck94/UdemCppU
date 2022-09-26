@@ -6,20 +6,18 @@ Willkommen bei der nächsten Programmier-Übung in diesem Kurs.
 
 ## Aufgaben der Programmierübung
 
-Die Aufgabe ist es die Funktion 
+### Aufgabe 1
 
-```cpp
-void mod_cross_sum(int I, int J);
-```
+Implementiert die folgende Struktur PlayerData:
 
-zu programmieren die folgenden Output in der Konsole ausgibt:
+- id: uint32_t
+- x_pos: float
+- y_pos: float
+- health: uint32_t
+- energy: uint32_t
+- team: $\in [ALLIED, ENEMY]$
 
-Bei der Funktion ist es die Aufgabe, über eine gegebene Laufweite I und  Laufweite J zu iterieren.  
-Bei jeder Iteration soll ausgegeben werden, ob die Summe des aktuellen i (for i in I) und j (for j in J) Gerade oder Ungerade ist.  
-Das heißt, ob das Ergebnis von (i + j) eine gerade oder ungerade Zahl liefert.
+### Aufgabe 2
 
-Die Funktion soll in der exercise.h Datei deklariert und in der exercise.cc (oder auch exercise.cpp) Datei definiert werden.
-
-## Beispiel
-
-![alt](./../../media/Exercise1.png)
+Schreibe eine Funktion, die die aktuelle Position des Spielers ausgibt.  
+Initialisiere zwei Spieler in der Main Funktion mit selber ausgedachten Positionen.  
